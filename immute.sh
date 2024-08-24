@@ -3,8 +3,8 @@ echo "This script may have unknown results depending on what distro you are usin
 echo "This script is expermental, and may fuck your system beyond repair as well."
 echo "DO YOU ACKNOWLEDGE THE POTENTIAL FOR A 100% UNUSABLE SYSTEM? (Type YES! DO AS I SAY!)"
 read ACKNOWLEDGEMENT
-if [ ACKNOWLEDGEMENT == "YES! DO AS I SAY!" ]
-
+if [ $ACKNOWLEDGEMENT == "YES! DO AS I SAY!" ]
+then
 chattr +i /etc
 echo Immuting /bin
 chmod -R a-w /bin >> null
