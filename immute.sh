@@ -5,7 +5,8 @@ echo "DO YOU ACKNOWLEDGE THE POTENTIAL FOR A 100% UNUSABLE SYSTEM? (Type YES! DO
 read ACKNOWLEDGEMENT
 if [ $ACKNOWLEDGEMENT == "YES! DO AS I SAY!" ]
 then
-chattr +i /etc
+echo Immuting /etc
+chattr -R +i /etc >> null
 echo Immuting /bin
 chmod -R a-w /bin >> null
 echo Immuting /sbin
