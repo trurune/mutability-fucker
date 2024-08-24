@@ -6,11 +6,21 @@ read ACKNOWLEDGEMENT
 if [ ACKNOWLEDGEMENT == "YES! DO AS I SAY!" ]
 
 chattr +i /etc
-chattr +i /bin
-chattr +i /sbin
-chattr +i /mnt
-chattr +i /boot
-chattr +i /opt
+echo Immuting /bin
+chmod -R a-w /bin >> null
+echo Immuting /sbin
+chmod -R a-w /sbin >> null
+echo Immuting /mnt
+chattr -R +i /mnt >> null
+echo Immuting /boot
+chattr -R +i /boot >> null
+echo Immuting /opt
+chattr -R +i /opt >> null
+echo Immuting /usr
+chattr -R +i /usr >> null
+echo Immuting /var
+chattr -R +i /var >> null
+
 echo "The process has completed! The system will now reboot!"
 
 fi
